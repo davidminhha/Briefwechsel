@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+@font-face{
+    src: url(typography/Roboto/Roboto-Black.ttf);
+    font-family: Roboto-Black;
+}
+
+@font-face{
+    src: url(typography/Roboto/Roboto-Medium.ttf);
+    font-family: Roboto-Medium;
+}
+
+.heading {
+    font-size: 25px;
+    line-height: 50px;
+    font-family: Roboto-Black;
+    padding-left: 25px;
+    background-color: #ddebe8;
+     border: 2px solid black;
+}
+
+.paragraph {
+    font-size: 14px;
+    line-height: 16px;
+    font-family: Roboto-Medium;
+    padding-left: 850px;
+    padding-top: 600px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin: 0px;
+    background-color: #ddebe8;
+    border: 2px solid black;
+}
+
+.accordion-link {
+    font-size: 16px;
+    line-height: 25px;
+    font-family: Roboto-Medium;
+}
+
+.answer {
+    font-size: 14px;
+    line-height: 15px;
+    font-family: Roboto-Medium;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+   
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: #ddebe8;
+    
+}
+
+.container{
+    width: 100%;
+    max-width: 1080px;
+    margin: 0px auto;
+    padding: 0 150px;
+}
+
+.accordion-item{
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding:10px;
+}
+
+.accordion-link{
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    width: 100%;
+    
+    padding: 15 0;
+}
+
+accordion-link i{
+    color:coral;
+    padding: 50px;
+    
+}
+
+.answer{
+    max-height:0;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    transition: max-height 650ms;
+}
+
+.answer::before{
+    content:"";
+    position: absolute;
+    width: 0px;
+    height: 0%;
+    background-color: white;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    
+}
+
+.answer p{
+    color: crimson;
+    padding-left: 20px;
+    padding-right: 450px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.accordion-item:target .answer{
+    max-height: 600px;
+}
