@@ -1,130 +1,140 @@
-*,
-*::before,
-*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-html{
+* {
+    font-family: urbane,sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: black; 
     box-sizing: border-box;
 }
 
-@font-face{
-    src: url(typography/Roboto/Roboto-Black.ttf);
-    font-family: Roboto-Black;
+body {
+    margin: 0px; padding: 0px;
+    background-color: #DBFFF7;
 }
 
-@font-face{
-    src: url(typography/Roboto/Roboto-Medium.ttf);
-    font-family: Roboto-Medium;
-}
+h1 {font-size: 3em;}
+h2 {font-size: 2em;}
+.wer {font-size: 2em;}
+.beschreibung {font-size:1em;}
 
-.heading {
-    font-size: 25px;
-    line-height: 50px;
-    font-family: Roboto-Black;
-    padding-left: 25px;
-    background-color: #ddebe8;
-     border: 2px solid black;
-}
-
-.paragraph {
-    font-size: 14px;
-    line-height: 16px;
-    font-family: Roboto-Medium;
-    padding-left: 850px;
-    padding-top: 600px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    margin: 0px;
-    background-color: #ddebe8;
-    border: 2px solid black;
-}
-
-.accordion-link {
-    font-size: 16px;
-    line-height: 25px;
-    font-family: Roboto-Medium;
-}
-
-.answer {
-    font-size: 14px;
-    line-height: 15px;
-    font-family: Roboto-Medium;
-}
-
-section{
-    width: 100%;
-    height: 100vh;
-   
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    background-color: #ddebe8;
-    
-}
-
-.container{
-    width: 100%;
-    max-width: 1080px;
-    margin: 0px auto;
-    padding: 0 150px;
-}
-
-.accordion-item{
-    background-color: white;
-    border-radius: 10px;
-    margin: 10px;
-    padding:10px;
-}
-
-.accordion-link{
-    font-size: 16px;
-    color: black;
-    text-decoration: none;
-    background-color: white;
-    width: 100%;
-    
-    padding: 15 0;
-}
-
-accordion-link i{
-    color:coral;
-    padding: 50px;
-    
-}
-
-.answer{
-    max-height:0;
-    overflow: hidden;
-    position: relative;
-    background-color: white;
-    color: black;
-    font-size: 14px;
-    transition: max-height 650ms;
-}
-
-.answer::before{
-    content:"";
-    position: absolute;
-    width: 0px;
-    height: 0%;
-    background-color: white;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    
-}
-
-.answer p{
-    color: crimson;
+.landing {
+    height:100vh;
     padding-left: 20px;
-    padding-right: 450px;
+    padding-right: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.accordion-item:target .answer{
-    max-height: 600px;
+.kopfzeile {
+    height: 33.33%;
+    background-image: url("/media/briefmarke.svg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 50vw;
+    border: solid 2px magenta;
+    padding-top: 20px;
+}
+
+.col-1, .col-2 {
+    height: 30%;
+    border: solid 2px magenta;
+}
+
+.arrow {
+    animation: blinker 3s linear infinite;
+    text-align: center;
+    font-size: 3em;
+    height: 6,66%
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+hr {
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (min-width: 800px) {
+    /* For desktop: */
+    .col-1 {width: calc(66.66%); float: left; height: 60%;}
+    .col-2 {width: calc(33.33%); float: left; height: 60%;}
+    .kopfzeile {background-size: 20vw;}
+    h1 {font-size: 4em;}
+    h2 {font-size: 2em;}
+    .wer {font-size: 3em;}
+    .beschreibung {font-size: 1em;}
+}
+
+.content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+}
+
+.accordion {
+    background-color: #DBFFF7;
+    border: 2.5px solid black;
+    color: black;
+    text-align:left;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: 0.1s;
+    margin-bottom: 0px;
+    margin-top: 10px;
+
+}
+
+.accordion:hover {
+    background-color: white;}
+
+.panel {
+    background-color: white;
+    overflow: hidden;
+    height:70vh;
+    border-left: 2.5px solid black;
+    border-right: 2.5px solid black;
+    border-bottom: 2.5px solid black;
+    padding-left: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding:20px;
+}
+
+.aa {
+    font-size: 1.5em;
+}
+
+a:link, a:visited, a:active, a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.open {
+    background-color: white;
+}
+
+#scroll {
+    height: 100%;
+    overflow-x: scroll;    
+    white-space: nowrap;
+    width: 1400px;
+}
+
+#scroll img {
+    height: 100%;
+    vertical-align: top; /* this prevents vertical whitespace */
 }
